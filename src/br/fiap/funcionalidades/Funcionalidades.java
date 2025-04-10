@@ -36,13 +36,24 @@ public class Funcionalidades {
                     pesquisarProduto();
                 }else{
                     if(opcao == 3){
-                        pesquisarFornecedor();
+                        pesquisar();
                     }else{
 
                     }
                 }
             }
         } while(opcao != 4);
+    }
+
+    private void pesquisar(){
+        String aux = "";
+        Fornecedores fornecedores = pesquisarFornecedor();
+
+        if (fornecedores != null){
+            aux += "Fornecedor: " + fornecedores.getNome() + "\n";
+            aux += "CNPJ: " + fornecedores.getCNPJ() + "\n";
+            showMessageDialog(null, aux);
+        }
     }
 
     private void cadastrarProduto(){
@@ -71,7 +82,7 @@ public class Funcionalidades {
         return fornecedores[indexForne-1];
     }
 
-    private Produtos pesquisarProduto(){
+    private void pesquisarProduto(){
         String aux = "Produto nao encontrado";
         String nomeProduto = (showInputDialog("NOME do Produto"));
 
@@ -81,11 +92,9 @@ public class Funcionalidades {
                 aux += "Nome do produto: " + nomeProduto + "\n";
                 aux += "Valor do produto: " + produtos[i].getValor() + "\n";
                 aux += "Nome do fornecedor: " + fornecedores[i].getNome() + "\n";
-                return produtos[i];
             }
         }
-        showMessageDialog(null, nomeProduto + "Produto nao encontrado.");
-        return null;
+        showMessageDialog(null, aux);
     }
 
     private Fornecedores pesquisarFornecedor(){
@@ -96,7 +105,7 @@ public class Funcionalidades {
                 return fornecedores[i];
             }
         }
-        showMessageDialog(null, cnpj + "CNPJ nao cadastrado.");
+        showMessageDialog(null, "CNPJ nao encontrado.");
         return null;
     }
 }

@@ -8,6 +8,8 @@ public class Main {
 
         //INSTANCIA O OBJETO
         Fornecedores fornecedor = new Fornecedores("xpto", 1);
+
+        //INSTANCIANDO O 'menuPrincipal'
         Funcionalidades funcionalidades = new Funcionalidades();
         funcionalidades.menuPrincipal();
 
