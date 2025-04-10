@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         //INSTANCIA O OBJETO
-        Fornecedores fornecedor = new Fornecedores("xpto", 1);
+        Fornecedores fornecedor = new Fornecedores("xpt", 1);
 
         //INSTANCIANDO O 'menuPrincipal'
         Funcionalidades funcionalidades = new Funcionalidades();
